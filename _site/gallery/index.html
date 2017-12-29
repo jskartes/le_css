@@ -3,6 +3,7 @@
 
   <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Test Page: Don't Panic</title>
   <link rel="stylesheet" type="text/css" href="/css/reset.css">
   <link rel="stylesheet" type="text/css" href="/css/main.css">
@@ -13,10 +14,22 @@
 
     <header class="header">
   <nav>
+    <input class="mobile-menu-check" type="checkbox" id="mobile-menu">
+    <label class="show-mobile-menu" for="mobile-menu">Menu</label>
     <ul class="header-nav nav-links">
       <li><a href="/">Home</a></li>
 <li><a href="/gallery">Gallery</a></li>
-<li><a href="/blog">Blog</a></li>
+<li class="dropdown">
+  <a class="drop-trigger" href="/blog">Blog</a>
+  <ul class="drop-menu">
+    <li>Recent posts</li>
+    
+      <li><a href="/2017/12/29/title-of-second-post.html">This is the title of the post</a></li>
+    
+      <li><a href="/2017/12/28/title-of-post.html">This is the title of the post</a></li>
+    
+  </ul>
+</li>
 <li><a href="/2017/12/29/title-of-second-post.html">Newest post</a></li>
 
     </ul>
@@ -58,7 +71,17 @@
     <ul class="footer-nav nav-links">
       <li><a href="/">Home</a></li>
 <li><a href="/gallery">Gallery</a></li>
-<li><a href="/blog">Blog</a></li>
+<li class="dropdown">
+  <a class="drop-trigger" href="/blog">Blog</a>
+  <ul class="drop-menu">
+    <li>Recent posts</li>
+    
+      <li><a href="/2017/12/29/title-of-second-post.html">This is the title of the post</a></li>
+    
+      <li><a href="/2017/12/28/title-of-post.html">This is the title of the post</a></li>
+    
+  </ul>
+</li>
 <li><a href="/2017/12/29/title-of-second-post.html">Newest post</a></li>
 
     </ul>
