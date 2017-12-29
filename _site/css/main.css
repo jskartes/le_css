@@ -1,11 +1,20 @@
-/* global */
+/* -------------------------------- global */
 
 html {
   box-shadow: 0 0 0 30px #000 inset;
   padding: 0 30px;
 }
 body {
+  display: flex;
+  flex-direction: column;
   font-family: helvetica, arial, sans;
+  min-height: 100vh;
+}
+.content-container {
+  display: flex;
+  flex: 1 1 auto;
+  padding-top: 10vh;
+  width: 100%;
 }
 h1 {
   font-size: 7vw;
@@ -19,6 +28,7 @@ a {
 }
 p {
   line-height: 1.5;
+  margin: 0.75em 0;
 }
 h2 ~ p {
   font-size: 0.8em;
@@ -28,7 +38,7 @@ h2 ~ p {
   text-align: center;
 }
 
-/* nav links */
+/* -------------------------------- nav links */
 
 .nav-links a {
   font-size: 0.8rem;
@@ -40,7 +50,7 @@ h2 ~ p {
   color: #ED6E2F;
 }
 
-/* header */
+/* -------------------------------- header */
 
 .header {
   background-color: #000;
@@ -88,7 +98,7 @@ h2 ~ p {
   color: #FFF;
 }
 
-/* footer */
+/* -------------------------------- footer */
 
 .footer {
   background-color: #000;
@@ -114,13 +124,36 @@ h2 ~ p {
   color: #CCC;
 }
 
-/* hero */
+/* -------------------------------- column */
+
+.col-three {
+  display: flex;
+  flex: 1;
+}
+.col {
+  box-sizing: border-box;
+  padding: 2em;
+}
+.col-three .col ~ .col {
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+.col-three .col-nav {
+  flex: 0 1 15em;
+}
+.col-three .col-content {
+  flex: 1;
+}
+.col-three .col-aside {
+  flex: 0 1 20em;
+}
+
+/* -------------------------------- hero */
 
 .full-hero {
   background-color: #C7DBFC;
   background-size: cover;
   box-sizing: border-box;
-  height: 100vh;
+  height: 90vh;
   padding-top: 10vh;
 }
 .full-hero:after {
@@ -158,7 +191,7 @@ h2 ~ p {
   color: #FFF;
 }
 
-/* social */
+/* -------------------------------- social */
 
 .social-link {
   background: rgba(150, 150, 150, 0.5);
@@ -190,31 +223,29 @@ h2 ~ p {
   margin: 0 0.5em;
 }
 
-/* homepage */
+/* -------------------------------- homepage */
 
 .home-callout {
+  align-items: center;
   background-color: #000;
   color: #FFF;
+  display: flex;
   padding: 7vh 0;
 }
 .callout-title {
-  font-size: 3.75vw;
-  margin-bottom: 0.5em;
-  text-align: center;
+  color: #999;
+  flex: 1;
+  font-size: 5.75vw;
+  text-align: right;
   text-transform: uppercase;
 }
 .callout-copy {
-  color: #999;
+  flex: 0 0 45em;
   font-size: 0.8rem;
-  margin: 0 auto;
-  max-width: 980px;
-  width: 90vw;
-}
-.callout-copy p {
-  margin-bottom: 0.8em;
+  padding: 0 3vw;
 }
 .callout-copy h3 {
-  color: #FFF;
+  color: #999;
   font-size: 1.3em;
   font-weight: bold;
   margin: 1.2em 0 0.5em;
@@ -230,7 +261,7 @@ h2 ~ p {
   text-align: center;
 }
 
-/* bio */
+/* -------------------------------- bio */
 
 .bio-wrapper {
   font-size: 24px;
@@ -265,4 +296,45 @@ h2 ~ p {
 }
 .bio-copy {
   font-size: 0.75em;
+}
+
+/* -------------------------------- gallery */
+
+.gallery-thumbs {
+  height: 90vh;
+  overflow: scroll;
+}
+.gallery-thumbs .current {
+  cursor: default;
+}
+.gallery-thumbs > div {
+  cursor: pointer;
+}
+.gallery-thumbs img {
+  box-sizing: border-box;
+  box-shadow: 0 0 0 5px transparent;
+  display: inline-block;
+  margin: 0 0 10px;
+  opacity: 0.5;
+  transition: all 0.5s ease-in-out;
+  width: 100%;
+}
+.gallery-thumbs img:hover {
+  opacity: 1;
+}
+.gallery-thumbs .current img {
+  box-shadow: 0 0 0 5px #ED6E2F;
+  opacity: 1;
+}
+.gallery-photo {
+  position: relative;
+}
+.gallery-photo img {
+  width: 100%;
+}
+.gallery-info {
+  font-size: 0.8rem;
+}
+.gallery-info h3 {
+  margin-bottom: 1em;
 }
